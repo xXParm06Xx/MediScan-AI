@@ -167,7 +167,7 @@ Training artifacts are available under `models/yolov8s/exp1/` and `models/yolov8
 
 ```bash
 # Clone the repo
-git clone https://github.com/xXParm06Xx/mediscan-ai.git
+git clone https://github.com/xXParm06Xx/MediScan-AI.git
 cd mediscan-ai
 
 # Create virtual environment
