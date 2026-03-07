@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['monitor', 'hospital_bed', 'infusion_pole', 'stretcher', 'wheelchair']
+
+roboflow:
+  workspace: parmthenoob
+  project: hospital-scb9f-dd7gs
+  version: 6
+  license: CC BY 4.0
+  url: https://app.roboflow.com/parmthenoob/hospital-scb9f-dd7gs/6

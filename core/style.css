@@ -1,0 +1,69 @@
+/* using custom font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* on whole app */
+.stApp {
+    background-color: #eeeeee;
+    animation: fadeIn 0.8s ease-in;
+    }
+    @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+
+/* Main Title */
+.main-title {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 20px;
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    color: #242424;
+    font-family: 'Inter', sans-serif;
+}
+
+.infoheading{
+    text-align: center;
+    font-size: 32px;
+    font-family: 'poppins', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.infotxt{
+    font-size: 16px;
+    font-family: 'inter', sans-serif;
+}
+
+.words{
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* title animation */
+.rainbow-text {
+    background: linear-gradient(270deg,#2563eb,#7b38ef,#1f60ed, #945df1, #ba35eb, #e03cda, #e03cda, #ba35eb, #945df1, #1f60ed, #7b38ef, #2563eb);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

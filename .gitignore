@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+venv/
+.venv/
+.env
+
+# IDE
+.vscode/
+
+# Dataset (download from Roboflow instead)
+assets/data/train/
+assets/data/valid/
+assets/data/test/
+
+# Sample videos (too large for git)
+assets/*.mp4
+
+# Checkpoint files (only best.pt is needed)
+models/*/last.pt
