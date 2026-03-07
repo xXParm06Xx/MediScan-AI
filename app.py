@@ -191,7 +191,7 @@ if page == "Detection":
                 with st.expander("Detections", expanded=True):
                     if uploaded_files and btn:
                         for uploaded in uploaded_files:
-                            image = np.array(Image.open(uploaded))
+                            image = np.array(Image.open(uploaded).convert("RGB"))
 
                             results = detect(model, image, conf, iou, device)
 
