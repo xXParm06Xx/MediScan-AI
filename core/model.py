@@ -11,6 +11,7 @@ config.read("config.ini")
 MODEL_PATHS = {
     "Nano": config["MODELS"]["nano"],
     "Small": config["MODELS"]["small"],
+    "Medium": config["MODELS"]["medium"]
 }
 
 @st.cache_resource

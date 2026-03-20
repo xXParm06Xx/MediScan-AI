@@ -51,7 +51,7 @@ with st.sidebar:
     )
 
     # getting model
-    selected_model = st.selectbox("Select Model:", ["Nano", "Small"], index=0)
+    selected_model = st.selectbox("Select Model:", ["Nano", "Small", "Medium"], index=0)
 
     # loading models
     if selected_model == "Nano":
@@ -60,6 +60,10 @@ with st.sidebar:
     elif selected_model == "Small":
         model = load_model("Small")
         st.toast("Model Switched to Small", duration="short")
+
+    elif selected_model == "Medium":
+        model = load_model("Medium")
+        st.toast("Model Switched to Medium", duration="short")
 
     conf = st.slider(
         "Confidence Range", min_value=0.0, max_value=1.0, step=0.01, value=0.5
@@ -123,7 +127,7 @@ if page == "Home":
         """
     ### How It <span class='words'> Works </span>
 
-    1. Select a model (Nano or Small)
+    1. Select a model from the sidebar
     2. Upload an image or video
     3. Adjust confidence & IOU settings
     4. Run detection and view results
@@ -260,6 +264,7 @@ if page == "Detection":
             #### 2️⃣ Select Model
             - **Nano** → Faster performance, lightweight.
             - **Small** → More accurate, slightly slower.
+            - **Medium** → Balanced performance and accuracy <span class='new-badge'>New</span>
 
             #### 3️⃣ Adjust Detection Parameters
             - **Confidence Threshold**  
@@ -329,6 +334,7 @@ if page == "Detection":
             #### 2️⃣ Select Model
             - **Nano** → Faster performance, lightweight.
             - **Small** → More accurate, slightly slower.
+            - **Medium** → Balanced performance and accuracy <span class='new-badge'>New</span>
 
             #### 3️⃣ Adjust Detection Parameters
             - **Confidence Threshold**  
@@ -398,6 +404,7 @@ if page == "About":
     Two model sizes are supported:
     - <span class='rainbow-text'>Nano</span> (faster, lightweight)
     - <span class='rainbow-text'>Small</span> (more accurate)
+    - <span class='rainbow-text'>Medium</span> (balanced) <span class='new-badge'>New</span>
     """,
         unsafe_allow_html=True,
     )

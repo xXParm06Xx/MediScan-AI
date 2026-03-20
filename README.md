@@ -33,7 +33,7 @@ This is a **demo project** and is not intended for clinical use.
 - **Detection Summary** - Total detections, per-class counts, confidence breakdowns, and low-confidence alerts
 - **Room Assessment** (Video) - Weighted scoring system to evaluate room equipment setup
 - **Equipment Checklist** - Tracks which expected equipment is present or missing
-- **Model Selection** - Switch between Nano (fast) and Small (accurate) YOLOv8 variants
+- **Model Selection** - Switch between Nano (fast), Small (accurate), and Medium (balanced) YOLOv8 variants
 - **GPU Support** - Automatic CUDA detection with CPU fallback
 - **Adjustable Thresholds** - Tunable confidence and IOU sliders
 
@@ -71,7 +71,10 @@ mediscan_ai/
 │   ├── yolov8n/            # Nano model weights + training artifacts
 │   │   ├── best.pt
 │   │   └── exp1/           # Training curves, confusion matrix, results
-│   └── yolov8s/            # Small model weights + training artifacts
+│   ├── yolov8s/            # Small model weights + training artifacts
+│   │   ├── best.pt
+│   │   └── exp1/
+│   └── yolov8m/            # Medium model weights + training artifacts
 │       ├── best.pt
 │       └── exp1/
 │
@@ -85,7 +88,7 @@ mediscan_ai/
 
 ## Training Details
 
-Both models were trained on a custom hospital equipment dataset sourced from [Roboflow](https://app.roboflow.com/parmthenoob/hospital-scb9f-dd7gs/6) with 5 classes.
+All models were trained on a custom hospital equipment dataset sourced from [Roboflow](https://app.roboflow.com/parmthenoob/hospital-scb9f-dd7gs/6) with 5 classes.
 
 ### Nano Model (YOLOv8n)
 
@@ -127,9 +130,30 @@ Both models were trained on a custom hospital equipment dataset sourced from [Ro
 | Precision | 95.36% |
 | Recall | 90.03% |
 
+### Medium Model (YOLOv8m)
+
+| Parameter | Value |
+|-----------|-------|
+| Base Model | `yolov8m.pt` (pretrained) |
+| Epochs | 80 |
+| Patience | 30 |
+| Batch Size | 8 |
+| Image Size | 640x640 |
+| Optimizer | Auto |
+| Cosine LR | Enabled |
+
+**Best Validation Metrics (exp1):**
+
+| Metric | Value |
+|--------|-------|
+| mAP50 | 94.91% |
+| mAP50-95 | 71.64% |
+| Precision | 94.68% |
+| Recall | 89.00% |
+
 ### Training Curves and Confusion Matrix
 
-Training artifacts are available under `models/yolov8s/exp1/` and `models/yolov8n/exp1/`:
+Training artifacts are available under `models/yolov8n/exp1/`, `models/yolov8s/exp1/`, and `models/yolov8m/exp1/`:
 
 **Results (Small Model):**
 
@@ -222,7 +246,7 @@ streamlit run app.py
 - Only detects the 5 trained equipment classes
 - Detection quality depends on image resolution and lighting
 - Not certified or validated for clinical deployment
-- The Nano model was trained on an older class set (8 classes) - the Small model uses the current 5-class setup
+- The Nano model was trained on an older class set (8 classes) - Small and Medium use the current 5-class setup
 
 ---
 
