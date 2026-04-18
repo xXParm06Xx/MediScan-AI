@@ -10,6 +10,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.10-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey)](https://creativecommons.org/licenses/by/4.0/)
 [![cvzone](https://img.shields.io/badge/cvzone-1.6+-green)](https://github.com/cvzone/cvzone)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://mediscan-ai-4u.streamlit.app/)
 
 An object detection system built to identify and track medical equipment in hospital environments using YOLOv8, Streamlit, and cvzone.
 
@@ -207,11 +208,17 @@ pip install -r requirements.txt
 
 ## Usage
 
+**Option A — Try it live (no setup needed):**
+
+👉 [mediscan-ai-4u.streamlit.app](https://mediscan-ai-4u.streamlit.app/)
+
+**Option B — Run locally:**
+
 ```bash
 streamlit run app.py
 ```
 
-1. Open the app in your browser (default: `http://localhost:8501`)
+1. Open your browser at `http://localhost:8501`
 2. Select a model from the sidebar
 3. Adjust confidence and IOU thresholds if needed
 4. Navigate to **Detection** page
